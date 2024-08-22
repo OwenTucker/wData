@@ -1,1 +1,13 @@
-// testing
+{
+  "manifest_version": 3,
+  "name": "Hello Extensions",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "permissions": [
+    "offscreen" , "geolocation"
+  ],
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "main128.png"
+  }
+}

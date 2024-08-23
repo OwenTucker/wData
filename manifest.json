@@ -1,13 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
+  "name": "My Temp",
+  "description": "Current Weather Data",
   "version": "1.0",
   "permissions": [
-    "offscreen" , "geolocation"
+    "offscreen",
+    "geolocation",
+    "webRequest",
+    "webRequestAuthProvider",
+    "storage"
   ],
+  "host_permissions": [ "http://api.weatherapi.com/v1" ],
   "action": {
-    "default_popup": "hello.html",
+    "default_popup": "popup.html",
     "default_icon": "main128.png"
   }
 }
+

@@ -13,7 +13,7 @@
   "host_permissions": [ "http://api.weatherapi.com/v1" ],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "main128.png"
+    "default_icon": "icons/main128.png"
   }
 }
 

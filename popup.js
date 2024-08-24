@@ -43,14 +43,40 @@ document.addEventListener('DOMContentLoaded', () => {
         const locationElement = document.getElementById('location');
         const temperatureElement = document.getElementById('temperature');
         const conditionElement = document.getElementById('condition');
+        const weatherIconElement = document.getElementById('weather-icon');
+        const rainIconElement = document.getElementById('rain-icon');
+        const rainChanceofElement = document.getElementById("rainChanceof");
+
 
         const locationName = weatherData.location.name + ', ' + weatherData.location.region;
         const temperature = weatherData.current.temp_f + 'F';
         const condition = weatherData.current.condition.text;
+        const rainChanceof = weatherData.forecast.forecastday[0].day.daily_will_it_rain;
 
         locationElement.textContent = locationName;
-        temperatureElement.textContent = `Temperature: ${temperature}`;
-        conditionElement.textContent = `Condition: ${condition}`;
+        rainChanceofElement.textContent = rainChanceof + '%';
+        temperatureElement.textContent = `${temperature}`;
+        //conditionElement.textContent = ` ${condition}`;
+
+
+        let iconSrc = '';
+        if (condition.includes('Sunny')) {
+            iconSrc = 'icons/sunny.png';
+        } else if (condition.includes('cloudy')) {
+            iconSrc = 'icons/cloudy.png';
+        } else if (condition.includes('rain')) {
+            iconSrc = 'icons/rainy.png';
+        }
+
+        if (iconSrc) {
+            weatherIconElement.src = iconSrc;
+            weatherIconElement.style.display = 'block';
+        } else {
+            weatherIconElement.style.display = 'none'; // Hide if no valid icon found
+        }
+        rainIconElement.src = 'icons/waterdroplet.png';
+        rainIconElement.style.display = 'block';
+
     } else {
         console.log("No weather data found in localStorage.");
     }

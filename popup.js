@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const condition = weatherData.current.condition.text;
         const rainChanceof = weatherData.forecast.forecastday[0].day.daily_will_it_rain;
 
-        locationElement.textContent = locationName;
+        //locationElement.textContent = locationName;
         rainChanceofElement.textContent = rainChanceof + '%';
         temperatureElement.textContent = `${temperature}`;
         //conditionElement.textContent = ` ${condition}`;
@@ -66,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
             iconSrc = 'icons/cloudy.png';
         } else if (condition.includes('rain')) {
             iconSrc = 'icons/rainy.png';
+        } else if (condition.includes('clear')) {
+            iconSrc = 'icons/clear.png';
         }
 
         if (iconSrc) {

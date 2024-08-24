@@ -6,13 +6,22 @@
     <title>Weather Info</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Verdana, sans-serif;
             padding: 10px;
             margin: 0;
             background-color: #f4f4f4;
         }
 
-        #weather-container {
+        .container-wrapper {
+            display: flex;
+            justify-content: center; /* Center the containers horizontally */
+            align-items: center; /* Align containers vertically */
+            gap: 8px; /* Space between the two containers */
+            max-width: 500px; /* Adjust the width as needed */
+            margin: 0 auto; /* Center the wrapper on the page */
+        }
+
+        #weather-container, #rain-container {
             background: #fff;
             padding: 10px;
             border-radius: 20px;
@@ -20,36 +29,20 @@
             text-align: center;
         }
 
-        #location {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
         #temperature {
-            font-size: 24px;
-            margin-top: 10px;
-        }
-
-        #condition {
             font-size: 18px;
             margin-top: 5px;
         }
-        #weather-icon {
-            margin-top: 10px; 
+
+        #weather-icon, #rain-icon {
             width: 50px;
             height: 50px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        #rain-icon {
             margin-top: 10px;
-            width: 50px;
-            height: 50px;
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
+
         #rainChanceof {
             font-size: 18px;
             margin-top: 5px;
@@ -57,13 +50,17 @@
     </style>
 </head>
 <body>
-    <div id="weather-container">
-        <div id="location"></div>
-        <div id="temperature"></div>
-        <div id="condition"></div>
-        <img id="weather-icon" src="" alt="Weather Icon" style="display: none;" />
-        <img id="rain-icon" src="" alt="Rain Icon" style="display: none;"/>
-        <div id="rainChanceof"><</div>
+    <div class="container-wrapper">
+        <div id="weather-container">
+            <div id="location"></div>
+            <div id="temperature"></div>
+            <div id="condition"></div>
+            <img id="weather-icon" src="sun.png" alt="Weather Icon" />
+        </div>
+        <div id="rain-container">
+            <div id="rainChanceof"></div>
+            <img id="rain-icon" src="raindrop.png" alt="Rain Icon" />
+        </div>
     </div>
     <script src="popup.js"></script>
 </body>

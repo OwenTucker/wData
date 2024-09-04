@@ -15,7 +15,7 @@ async function getWeatherData() {
 
         // Construct the API URL with the latitude and longitude
         const apiKey = '22ed3e756c2042a7832223021242208'; // Replace with your actual API key
-        const apiUrl = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${latitude},${longitude}&days=3&aqi=no&alerts=no`;
+        const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${latitude},${longitude}&days=3&aqi=no&alerts=no`;
 
         // Fetch data from the API
         const weatherData = await fetchWeatherData(apiUrl);
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             iconSrc = 'icons/cloudy.png';
         } else if (condition.includes('rain')) {
             iconSrc = 'icons/rainy.png';
-        } else if (condition.includes('clear')) {
+        } else if (condition.includes('Clear')) {
             iconSrc = 'icons/clear.png';
         }
 

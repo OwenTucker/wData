@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const locationName = weatherData.location.name + ', ' + weatherData.location.region;
         const temperature = weatherData.current.temp_f + 'F';
         const condition = weatherData.current.condition.text;
-        const rainChanceof = weatherData.forecast.forecastday[0].day.daily_will_it_rain;
+        const rainChanceof = weatherData.forecast.forecastday[0].day.daily_chance_of_rain;
 
         //locationElement.textContent = locationName;
         rainChanceofElement.textContent = rainChanceof + '%';
@@ -68,6 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
             iconSrc = 'icons/rainy.png';
         } else if (condition.includes('Clear')) {
             iconSrc = 'icons/clear.png';
+        } else if (condition.includes('Overcast')) {
+            iconSrc = 'icons/overcast.png';
         }
 
         if (iconSrc) {
